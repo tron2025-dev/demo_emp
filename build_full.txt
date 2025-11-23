@@ -1,0 +1,26 @@
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Hxtreme\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Hxtreme\Downloads\projects\project-2\package-lock.json
+
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 7.0s
+   Running TypeScript ...
+Failed to compile.
+
+./app/api/admin/employees/route.ts:175:17
+Type error: Argument of type 'string' is not assignable to parameter of type 'TemplateStringsArray'.
+
+[0m [90m 173 |[39m         [36mconst[39m result [33m=[39m [36mawait[39m sql[32m`[39m
+ [90m 174 |[39m [32m      UPDATE employees[39m
+[31m[1m>[22m[39m[90m 175 |[39m [32m      SET ${sql(updateFields.join(', '))}, updated_at = NOW()[39m
+ [90m     |[39m                 [31m[1m^[22m[39m
+ [90m 176 |[39m [32m      WHERE id = ${id}[39m
+ [90m 177 |[39m [32m      RETURNING id, name, email, phone, role, department, designation, status[39m
+ [90m 178 |[39m [32m    `[39m[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null

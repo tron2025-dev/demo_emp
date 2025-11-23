@@ -1,0 +1,16 @@
+# Node.js utility scripts
+apply-schema.js
+check-admin.js
+check-env.js
+make-admin.js
+test-db.js
+
+# Build output
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env*.local

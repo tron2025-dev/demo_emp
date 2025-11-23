@@ -1,0 +1,32 @@
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Hxtreme\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Hxtreme\Downloads\projects\project-2\package-lock.json
+
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 6.8s
+   Running TypeScript ...
+Failed to compile.
+
+.next/types/validator.ts:153:31
+Type error: Type 'typeof import("C:/Users/Hxtreme/Downloads/projects/project-2/app/api/admin/reports/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/admin/reports/[id]">'.
+  Types of property 'PATCH' are incompatible.
+    Type '(request: NextRequest, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ error: string; }> | NextResponse<{ message: string; report: Record<string, any>; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+
+[0m [90m 151 |[39m   type __IsExpected[33m<[39m[33mSpecific[39m [36mextends[39m [33mRouteHandlerConfig[39m[33m<[39m[32m"/api/admin/reports/[id]"[39m[33m>>[39m [33m=[39m [33mSpecific[39m
+ [90m 152 |[39m   [36mconst[39m handler [33m=[39m {} [36mas[39m [36mtypeof[39m [36mimport[39m([32m"../../app/api/admin/reports/[id]/route.js"[39m)
+[31m[1m>[22m[39m[90m 153 |[39m   type __Check [33m=[39m __IsExpected[33m<[39m[36mtypeof[39m handler[33m>[39m
+ [90m     |[39m                               [31m[1m^[22m[39m
+ [90m 154 |[39m   [90m// @ts-ignore[39m
+ [90m 155 |[39m   type __Unused [33m=[39m __Check
+ [90m 156 |[39m }[0m
+Next.js build worker exited with code: 1 and signal: null
